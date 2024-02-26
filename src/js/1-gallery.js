@@ -1,3 +1,5 @@
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 const images = [
     {
       preview:
@@ -63,17 +65,11 @@ const images = [
       description: 'Lighthouse Coast Sea',
     },
   ];
-//  створюємо галерею зображень
 const list = document.querySelector("ul.gallery");
 const listItem = images.map(image => `<li class="gallery-item"><a class="gallery-link" href="${image.original}">
 <img class="gallery-image" src="${image.preview}" alt="${image.description}" width="360" height="200"/></a></li>`
 ).join('');
 list.insertAdjacentHTML('beforeend', listItem);
-// Описаний в документації
-import SimpleLightbox from "simplelightbox";
-// Додатковий імпорт стилів
-import "simplelightbox/dist/simple-lightbox.min.css";
-
 const lightbox = new SimpleLightbox('.gallery-link', {
   captionsData: 'alt',
   captionDelay: 250,

@@ -20,8 +20,11 @@ window.addEventListener("load", loadForm);
 form.addEventListener("submit", event => {
   event.preventDefault();
   localStorage.removeItem("feedback-form-state");
-  if (form.elements.email.value === "" && form.elements.message.value === "") {
-    alert('Заповніть всі поля форми!');
+  if (form.elements.email.value === "") {
+    alert("Введіть електронну пошту");
+  }
+  if (form.elements.message.value === "") {
+    alert("Введіть повідомлення");
   }
   console.log({
     email: form.elements.email.value.trim(),
