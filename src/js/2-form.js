@@ -11,10 +11,11 @@ const loadForm = () => {
   const dataStorage = localStorage.getItem("feedback-form-state");
   if (dataStorage) {
     const { email, message } = JSON.parse(dataStorage);
-    form.elements.email.value = email;
-    form.elements.message.value = message;
+    form.elements.email.value = email || '';
+    form.elements.message.value = message || '';
+
   }
-};
+  };
 form.addEventListener("input", saveForm);
 window.addEventListener("load", loadForm);
 form.addEventListener("submit", event => {
