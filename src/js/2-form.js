@@ -22,13 +22,13 @@ form.addEventListener("submit", event => {
   localStorage.removeItem("feedback-form-state");
   if (form.elements.email.value === "") {
     alert("Введіть електронну пошту");
-  }
-  if (form.elements.message.value === "") {
+  } else if (form.elements.message.value === "") {
     alert("Введіть повідомлення");
   }
-  console.log({
-    email: form.elements.email.value.trim(),
-    message: form.elements.message.value.trim(),
-  });
-  form.reset();
+  else {
+    console.log({
+      email: form.elements.email.value.trim(),
+      message: form.elements.message.value.trim(),
+    });
+  form.reset();}
 });
